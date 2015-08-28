@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.helalet.plugins.devicemodel" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>DeviceModel</name>
+    <description>A plugin for getting proper device model info on Android devices.</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,plugins,device model,devicemodel</keywords>
+
+    <js-module name="DeviceModel" src="www/devicemodel.js">
+        <clobbers target="window.devicemodel" />
+    </js-module>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="DeviceModel">
+                <param name="android-package" value="com.helalet.plugins.devicemodel.DeviceModel" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/DeviceModel.java"
+                     target-dir="src/com/helalet/plugins/DeviceModel" />
+    </platform>
+</plugin>
